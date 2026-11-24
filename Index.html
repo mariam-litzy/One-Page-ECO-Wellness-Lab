@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECO Wellness Lab</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: white;
+            color: #222;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #3157e8;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #b8ef70;
+        }
+
+        .contacto {
+            background-color: #b8ef70;
+            color: #222;
+            padding: 10px 17px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* INICIO */
+
+        .inicio {
+            background-color: #3157e8;
+            color: white;
+            padding: 55px 8%;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .inicio-texto {
+            width: 50%;
+        }
+
+        .inicio-texto h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .inicio-texto h1 span {
+            color: #b8ef70;
+        }
+
+        .inicio-texto p {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .boton {
+            background-color: #f5a8cf;
+            color: #222;
+            padding: 12px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .inicio-imagen {
+            width: 50%;
+        }
+
+        .inicio-imagen img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* NOSOTROS */
+
+        .nosotros {
+            padding: 65px 10%;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nosotros h2 {
+            color: #3157e8;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .nosotros p {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .nosotros-texto {
+            flex: 1;
+        }
+
+        .nosotros-titulo {
+            flex: 1;
+        }
+
+        /* MATCHA Y CAFE */
+
+        .bebidas {
+            background-color: #f1f3ee;
+            padding: 60px 8%;
+        }
+
+        .bebidas h2 {
+            text-align: center;
+            color: #3157e8;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .descripcion {
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 14px;
+        }
+
+        .bebidas-contenedor {
+            display: flex;
+            gap: 25px;
+        }
+
+        .bebida {
+            background-color: white;
+            width: 50%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .bebida img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .bebida-info {
+            padding: 20px;
+        }
+
+        .bebida-info h3 {
+            color: #3157e8;
+            margin-bottom: 10px;
+        }
+
+        .bebida-info p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* EXPERIENCIAS */
+
+        .experiencias {
+            padding: 60px 8%;
+            background-color: #f5a8cf;
+        }
+
+        .experiencias h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .experiencias > p {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 35px;
+        }
+
+        .experiencias-contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .experiencia {
+            background-color: white;
+            padding: 25px;
+            width: calc(50% - 10px);
+            border-radius: 8px;
+        }
+
+        .experiencia h3 {
+            color: #3157e8;
+            margin-bottom: 10px;
+        }
+
+        .experiencia p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* GALERIA */
+
+        .galeria {
+            padding: 60px 8%;
+        }
+
+        .galeria h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #3157e8;
+            margin-bottom: 12px;
+        }
+
+        .galeria > p {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .fotos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .fotos img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* CONTACTO */
+
+        .contacto-seccion {
+            background-color: #b8ef70;
+            padding: 55px 8%;
+            text-align: center;
+        }
+
+        .contacto-seccion h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .contacto-seccion p {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .boton-instagram {
+            background-color: #3157e8;
+            color: white;
+            padding: 13px 22px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 25px 8%;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 13px;
+            margin: 7px 0;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .inicio {
+                flex-direction: column;
+            }
+
+            .inicio-texto,
+            .inicio-imagen {
+                width: 100%;
+            }
+
+            .inicio-texto h1 {
+                font-size: 38px;
+            }
+
+            .nosotros {
+                flex-direction: column;
+            }
+
+            .bebidas-contenedor {
+                flex-direction: column;
+            }
+
+            .bebida {
+                width: 100%;
+            }
+
+            .experiencia {
+                width: 100%;
+            }
+
+            .fotos {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .fotos img {
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">ECO Wellness Lab</div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#bebidas">Bebidas</a>
+            <a href="#experiencias">Experiencias</a>
+            <a href="#galeria">Galería</a>
+        </nav>
+
+        <a class="contacto" href="https://www.instagram.com/eco.wellness_lab/" target="_blank" rel="noopener noreferrer">
+            Contacto
+        </a>
+    </header>
+
+    <section class="inicio" id="inicio">
+
+        <div class="inicio-texto">
+            <h1>Conecta contigo y disfruta <span>el momento.</span></h1>
+
+            <p>
+                En ECO Wellness Lab nos gusta combinar el yoga,
+                el matcha y el café para crear momentos diferentes.
+                Un espacio para relajarte, moverte y pasarla bien.
+            </p>
+
+            <a href="#experiencias" class="boton">Conoce nuestras actividades</a>
+        </div>
+
+        <div class="inicio-imagen">
+            <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&fit=crop&w=1000&q=85" alt="Persona practicando yoga">
+        </div>
+
+    </section>
+
+    <section class="nosotros" id="nosotros">
+
+        <div class="nosotros-titulo">
+            <h2>¿Qué es ECO Wellness Lab?</h2>
+        </div>
+
+        <div class="nosotros-texto">
+            <p>
+                Es un espacio dedicado al bienestar y a disfrutar
+                de actividades que nos ayudan a salir un poco de
+                la rutina.
+            </p>
+
+            <p>
+                Buscamos que las personas puedan conectar con ellas
+                mismas a través del yoga, mientras disfrutan de
+                bebidas como matcha y café.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="bebidas" id="bebidas">
+
+        <h2>Matcha & Coffee</h2>
+
+        <p class="descripcion">
+            Dos opciones para disfrutar durante el día.
+        </p>
+
+        <div class="bebidas-contenedor">
+
+            <div class="bebida">
+                <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=1000&q=85" alt="Bebida de matcha">
+
+                <div class="bebida-info">
+                    <h3>Matcha</h3>
+                    <p>
+                        Una bebida que forma parte de nuestras experiencias
+                        y que puedes disfrutar en diferentes momentos.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bebida">
+                <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=1000&q=85" alt="Momento de bienestar">
+
+                <div class="bebida-info">
+                    <h3>Coffee</h3>
+                    <p>
+                        El café también tiene su lugar en ECO.
+                        Una buena opción para acompañar una pausa
+                        o compartir con alguien.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="experiencias" id="experiencias">
+
+        <h2>Nuestras experiencias</h2>
+
+        <p>
+            Estas son algunas de las actividades que puedes encontrar.
+        </p>
+
+        <div class="experiencias-contenedor">
+
+            <div class="experiencia">
+                <h3>Matcha Yoga</h3>
+                <p>
+                    Una actividad que combina una práctica de yoga
+                    con un momento para disfrutar matcha.
+                </p>
+            </div>
+
+            <div class="experiencia">
+                <h3>Coffee Yoga</h3>
+                <p>
+                    Una experiencia para moverte, relajarte
+                    y disfrutar de un café.
+                </p>
+            </div>
+
+            <div class="experiencia">
+                <h3>Yoga al Amanecer</h3>
+                <p>
+                    Una forma diferente de comenzar el día
+                    con movimiento y tranquilidad.
+                </p>
+            </div>
+
+            <div class="experiencia">
+                <h3>Spring Break Yoga</h3>
+                <p>
+                    Un espacio para disfrutar de una actividad
+                    diferente y salir de la rutina.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="galeria" id="galeria">
+
+        <h2>Galería</h2>
+
+        <p>
+            Algunos momentos y espacios que representan nuestro concepto.
+        </p>
+
+        <div class="fotos">
+
+            <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=85" alt="Café">
+
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85" alt="Paisaje natural">
+
+            <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85" alt="Naturaleza">
+
+            <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?auto=format&fit=crop&w=900&q=85" alt="Yoga">
+
+            <img src="https://images.unsplash.com/photo-1523906630133-f6934a1ab2b9?auto=format&fit=crop&w=900&q=85" alt="Espacio al aire libre">
+
+        </div>
+
+    </section>
+
+    <section class="contacto-seccion">
+
+        <h2>¡Conoce más sobre nosotros!</h2>
+
+        <p>
+            Si quieres conocer nuestras actividades o saber más
+            sobre ECO Wellness Lab, puedes encontrarnos en Instagram.
+        </p>
+
+        <a class="boton-instagram" href="https://www.instagram.com/eco.wellness_lab/" target="_blank" rel="noopener noreferrer">
+            Visitar Instagram
+        </a>
+
+    </section>
+
+    <footer>
+        <p><strong>ECO Wellness Lab</strong></p>
+        <p>Yoga, matcha y café.</p>
+        <p>© 2026 ECO Wellness Lab</p>
+    </footer>
+
+</body>
+</html>
